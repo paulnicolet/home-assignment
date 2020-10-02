@@ -2,6 +2,9 @@
 
 Open domain image classification
 
+TODO
+
+* Talk about environment tradeoff with conda and colab
 
 
 ## Context
