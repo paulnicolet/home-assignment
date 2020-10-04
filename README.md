@@ -15,7 +15,7 @@ The experiment and thought process can be read in the provided notebooks in the 
 1. `1_data_exploration.ipynb` contains all the steps to understand the data.
 2. `2_model_training.ipynb` contains all the steps to understand the model training process.
 
-At the end, we obtain a model with an accuracy of 0.89 and F1-score of 0.82:
+At the end, we obtain a model with an **accuracy of 0.91** and **F1-score of 0.90**:
 
 ![accuracy](static/images/accuracy.png)
 
