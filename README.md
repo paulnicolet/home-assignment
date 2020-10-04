@@ -2,6 +2,92 @@
 
 Open domain image classification
 
+## Assigmnent 1 solution proposal
+
+_Please find the problem statement in the sections below._
+
+In the following paragraph, we explain the design insights to understand our thought process, and how to set up and run the solution.
+
+### Design 🎨
+
+The experiment and thought process can be read in the provided notebooks in the `notebooks` directory. Those contain all the steps we performed before coming up with the final model. We advise to not run those notebooks but simpy read them, as they contain environment specific setup.
+
+1. `1_data_exploration.ipynb` contains all the steps to understand the data.
+2. `2_model_training.ipynb` contains all the steps to understand the model training process.
+
+At the end, we obtain a model with an accuracy of 0.89 and F1-score of 0.82:
+
+![loss](static/images/loss.jpg)
+![accuracy](static/images/accuracy.jpg)
+
+
+### Set up ⚙️
+
+#### Environment and requirements
+
+The project has been developped in a `conda` environment. However, it is not necessary to replicate it. 
+
+If you wish to use conda:
+
+```# conda env create -f env.yml```
+
+then 
+
+```# conda activate foodvisor```
+
+Otherwise simply use `pip`:
+
+```# pip install -r requirements.txt```
+
+#### Data
+
+Several pieces of data are needed in order to run the project.
+
+* The images directory provided by the interviewer
+* The image annotations and label mapping found in this [release](https://github.com/Foodvisor/home-assignment/releases/tag/v0.1.0)
+* The model checkpoint found in this [release](about:blank)
+
+You can store them anywhere on the machine, paths are dynamically provided at runtime.
+
+
+### Running 🍅
+
+It is possible to train the model from scratch, or use the pretrained one to predict if an image contains tomatoes or not.
+
+#### Training
+
+Run the following:
+
+```
+# python main.py train \
+    --imgs_root <path to images> \
+    --ann_path <path to annotations file> \
+    --map_path <path to label mapping file> \
+    --out_cp_path <path to save the model output checkpoint> \
+    --device <"cuda" or "cpu">
+```
+
+#### Get a prediction
+
+Run the following:
+
+```
+# python main.py predict \
+    --img_path <path to image> \
+    --cp_path <path to model checkpoint>
+``` 
+
+### Improvements 🚀
+
+As stated in the notebooks, the solution should not be considered as final and optimal. We skipped many steps in order get results in a time limited environment. In order to get a production ready model, we should consider the following improvements:
+
+* Think about using the extra information we discarded from the annotations
+* Use cross-validation and analyse models performance and variance
+* Fine-tune all the following variables
+    * Data augmentation and preprocessing
+    * Model types and architecture
+    * Optimizer type and learning rate
+* Search for state-of-the-art techniques used for classification in the food domain
 
 ## Context
 
