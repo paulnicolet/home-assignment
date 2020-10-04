@@ -25,19 +25,15 @@ At the end, we obtain a model with an accuracy of 0.89 and F1-score of 0.82:
 
 #### Environment and requirements
 
-The project has been developped in a `conda` environment. However, it is not necessary to replicate it. 
+The project has been developped in a `conda` environment. First, we need to install it if not done already: https://docs.conda.io/projects/conda/en/latest/user-guide/install/
 
-If you wish to use conda:
+Import the environment:
 
 ```# conda env create -f env.yml```
 
-then 
+and activate it:
 
 ```# conda activate foodvisor```
-
-Otherwise simply use `pip`:
-
-```# pip install -r requirements.txt```
 
 #### Data
 
