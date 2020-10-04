@@ -39,7 +39,7 @@ Several pieces of data are needed in order to run the project.
 
 * The images directory provided by the interviewer
 * The image annotations and label mapping found in this [release](https://github.com/Foodvisor/home-assignment/releases/tag/v0.1.0)
-* The model checkpoint found in this [release](about:blank)
+* The model checkpoint found in this [release](https://github.com/paulnicolet/home-assignment/releases/tag/v1.0.0)
 
 You can store them anywhere on the machine, paths are dynamically provided at runtime.
 
