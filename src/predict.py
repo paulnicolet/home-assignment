@@ -24,4 +24,5 @@ def has_tomatoes(img_path, checkpoint_path):
 def _load_model(checkpoint_path):
     model = new_model()
     model.load_state_dict(torch.load(checkpoint_path))
+    model.eval()
     return model
