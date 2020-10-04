@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 from .tomatoes_dataset import TomatoesDataset
 
-EPOCHS = 15
+EPOCHS = 21
 BATCH_SIZE = 32
 LR = 0.001
 
@@ -33,7 +33,7 @@ def train(imgs_root, annotation_path, label_mapping_path, device):
         Path(label_mapping_path),
         sampling='over'
     )
-    loader = DataLoader(dataset, shuffle=True, batch_size=BATCH_SIZE)
+    loader = DataLoader(dataset, shuffle=False, batch_size=BATCH_SIZE)
 
     # Init model and optimizer
     model = new_model()
