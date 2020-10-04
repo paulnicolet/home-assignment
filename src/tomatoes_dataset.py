@@ -124,7 +124,7 @@ class TomatoesDataset(Dataset):
         ] + [(path, None) for path in without_tomato]
 
         result = np.array(paths_transforms)
-        np.random.shuffle(imgs_paths)
+        np.random.shuffle(result)
         return result
 
     def _list_images(self, root):
