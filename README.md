@@ -17,7 +17,6 @@ The experiment and thought process can be read in the provided notebooks in the 
 
 At the end, we obtain a model with an accuracy of 0.89 and F1-score of 0.82:
 
-![loss](static/images/loss.png)
 ![accuracy](static/images/accuracy.png)
 
 
