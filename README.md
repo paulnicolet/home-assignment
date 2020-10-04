@@ -8,17 +8,16 @@ _Please find the problem statement in the sections below._
 
 In the following paragraph, we explain the design insights to understand our thought process, and how to set up and run the solution.
 
-### Design 🎨
-
-The experiment and thought process can be read in the provided notebooks in the `notebooks` directory. Those contain all the steps we performed before coming up with the final model. We advise to not run those notebooks but simpy read them, as they contain environment specific setup.
-
-1. `1_data_exploration.ipynb` contains all the steps to understand the data.
-2. `2_model_training.ipynb` contains all the steps to understand the model training process.
-
-At the end, we obtain a model with an **accuracy of 0.91** and **F1-score of 0.90**:
+At the end, we present a pre-trained ResNet, trained for 21 epochs on an augmented version of our dataset. We obtain an **accuracy of 0.91** and **F1-score of 0.90**.
 
 ![accuracy](static/images/accuracy.png)
 
+### Design 🎨
+
+The experiment and thought process can be read in the provided notebooks in the `notebooks` directory. Those contain all the steps we performed before coming up with the final model. We advise to not run those notebooks, as they contain environment specific setup, but **we highly encourage to read them**.
+
+1. `1_data_exploration.ipynb` contains all the steps to understand the data.
+2. `2_model_training.ipynb` contains all the steps to understand the model training process.
 
 ### Set up ⚙️
 
