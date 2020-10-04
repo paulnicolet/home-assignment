@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import torch
+
 from torch import nn, optim
 from torch.autograd import Variable
 from torch.nn import BCEWithLogitsLoss
@@ -13,6 +15,7 @@ EPOCHS = 21
 BATCH_SIZE = 32
 LR = 0.001
 
+torch.manual_seed(42)
 
 def train(imgs_root, annotation_path, label_mapping_path, device):
     """Train a new model from the entire datast.
@@ -59,7 +62,7 @@ def train(imgs_root, annotation_path, label_mapping_path, device):
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-
+                        
     return model
 
 
