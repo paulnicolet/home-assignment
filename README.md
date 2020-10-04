@@ -17,8 +17,8 @@ The experiment and thought process can be read in the provided notebooks in the 
 
 At the end, we obtain a model with an accuracy of 0.89 and F1-score of 0.82:
 
-![loss](static/images/loss.jpg)
-![accuracy](static/images/accuracy.jpg)
+![loss](static/images/loss.png)
+![accuracy](static/images/accuracy.png)
 
 
 ### Set up ⚙️
@@ -81,13 +81,13 @@ Run the following:
 
 As stated in the notebooks, the solution should not be considered as final and optimal. We skipped many steps in order get results in a time limited environment. In order to get a production ready model, we should consider the following improvements:
 
+* Search for state-of-the-art techniques used for classification in the food domain
 * Think about using the extra information we discarded from the annotations
 * Use cross-validation and analyse models performance and variance
 * Fine-tune all the following variables
     * Data augmentation and preprocessing
     * Model types and architecture
     * Optimizer type and learning rate
-* Search for state-of-the-art techniques used for classification in the food domain
 
 ## Context
 
