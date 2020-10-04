@@ -2,14 +2,15 @@ import csv
 import json
 import os
 
-import torch
 import numpy as np
+import torch
 import torchvision.transforms.functional as TF
 from PIL import Image
 from torch.utils.data import Dataset
 from torchvision import transforms as T
 
 RESIZE_DIM = (600, 600)
+
 
 class RotationTransform:
     def __init__(self, angle):
@@ -23,7 +24,7 @@ class TomatoesDataset(Dataset):
     """Dataset class used to detect presence of tomatoes on images.
     Each item is a tuple of a image tensor and a class ID (0 = tomato).
     """
-    
+
     base_transforms = [T.Resize(RESIZE_DIM), T.ToTensor()]
 
     def __init__(self, imgs_root, annotations_path, label_mapping_path, sampling=None, seed=42):
@@ -49,7 +50,7 @@ class TomatoesDataset(Dataset):
 
         elif sampling == 'over':
             imgs_paths_with_transform = self._oversample(imgs_paths)
-            
+
         else:
             imgs_paths_with_transform = [(path, None) for path in imgs_paths]
 
@@ -70,7 +71,7 @@ class TomatoesDataset(Dataset):
             transforms.insert(1, internal_transform)
 
         return T.Compose(transforms)(Image.open(self.imgs_root / fname))
-    
+
     def _get_img_label(self, path):
         """Get the corresponding image label.
         """
@@ -80,7 +81,7 @@ class TomatoesDataset(Dataset):
             if item['id'] in self.tomato_label_ids
         ]
         return 1 if len(tomato_items) > 0 else 0
-    
+
     def _undersample(self, imgs_paths):
         """Select the paths with their internal transforms by undersampling.
         """
@@ -106,7 +107,7 @@ class TomatoesDataset(Dataset):
         labels = [bool(self._get_img_label(path)) for path in imgs_paths]
         without_tomato = imgs_paths[np.invert(labels)]
         with_tomato = imgs_paths[labels]
-        
+
         # Augment the dataset by transformation
         internal_transforms = [
             None,
@@ -131,12 +132,11 @@ class TomatoesDataset(Dataset):
             fname for fname in os.listdir(root)
             if fname.endswith('.jpg') or fname.endswith('.jpeg')
         ]
-    
+
     @classmethod
     def label_to_vector(cls, label):
         return torch.tensor([float(1-label), float(label)])
 
-    
     @classmethod
     def prepare_single_image(cls, path):
         """Prepare a single image for processing.
