@@ -8,7 +8,7 @@ _Please find the problem statement in the sections below._
 
 In the following paragraph, we explain the design insights to understand our thought process, and how to set up and run the solution.
 
-At the end, we present a pre-trained ResNet, trained for 21 epochs on an augmented version of our dataset. We obtain an **accuracy of 0.91** and **F1-score of 0.90**.
+At the end, we present a pre-trained ResNet, trained for 21 epochs on an augmented version of our dataset, able to detect presence of tomato on 600x600 images. We obtain an **accuracy of 0.91** and **F1-score of 0.90**.
 
 ![accuracy](static/images/accuracy.png)
 
@@ -78,10 +78,12 @@ As stated in the notebooks, the solution should not be considered as final and o
 * Search for state-of-the-art techniques used for classification in the food domain
 * Think about using the extra information we discarded from the annotations
 * Use cross-validation and analyse models performance and variance
+* Use advanced evaluation using confusion matrices and ROC curves
 * Fine-tune all the following variables
     * Data augmentation and preprocessing
     * Model types and architecture
-    * Optimizer type and learning rate
+    * Optimizer type
+    * Learning rate scheduling
 
 ## Context
 
